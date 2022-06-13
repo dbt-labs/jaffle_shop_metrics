@@ -66,7 +66,36 @@ metrics:
       - customer_status
 ```
 
+Now it's time to use metrics!
 
+### Caveat Pre dbt-Server
+Metrics are dynamic by nature and the ability to quickly iterate and
+consume them is very important. dbt's current paradigm of materializing tables means
+that consuming metrics must be pre-defined and pre-materialzied in order for the table 
+to be represented in the BI tool. This will change, however, with the release of 
+dbt Server in late 2022. This will allow the user/consumer/BI tool to provide the 
+parameters of the BI query and get returned the exact answer they are looking for,
+as opposed to materializing each potential combination in tables.
+
+### Consuming
+To query the metric, we use the macros contained within the [`dbt_metrics` package](https://github.com/dbt-labs/dbt_metrics). For more information on all the parameters and options offered in the metrics macro, please reference the ReadME of the repository.
+
+In the meantime, lets also begin to answer our CEO's question. If he were first interested in the weekly average order amount, we would enter the following query in which we:
+- Define the metric being called
+- Provide the grain that we are interested in
+- Provide the list of dimensions we want to see
+
+```sql
+select * 
+from {{ metrics.metric(
+    metric_name='average_order_amount',
+    grain='week',
+    dimensions=[],
+) }}
+```
+
+This returns a dataset where each row is equal to the average order amount metric 
+for that particular week! 
 
 ## Resources:
 - [What are dbt Metrics?](https://docs.getdbt.com/docs/building-a-dbt-project/metrics#about-metrics)

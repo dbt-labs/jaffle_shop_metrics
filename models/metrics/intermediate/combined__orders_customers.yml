@@ -19,7 +19,7 @@ metrics:
     model: ref('combined__orders_customers')
     description: "The average size of a jaffle order"
 
-    type: avg
+    type: average
     sql: amount
 
     timestamp: order_date
