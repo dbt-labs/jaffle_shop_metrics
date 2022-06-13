@@ -42,11 +42,31 @@ reference dimensions from both of them.
 
 ### Defining
 Now that we've materialized the model that we'll use as the base for our metric, 
-we need to define the metric we're interested in. 
+we need to define the metric we're interested in. Following the format defined 
+in the documentation, we created the metric definition shown below:
 
 ```yaml
+metrics:
+  - name: average_order_amount
+    label: Average Order Amount
+    model: ref('combined__orders_customers')
+    description: "The average size of a jaffle order"
 
+    type: average
+    sql: amount
+
+    timestamp: order_date
+    time_grains: [day, week, month]
+
+    dimensions:
+      - has_credit_card_payment
+      - has_coupon_payment
+      - has_bank_transfer_payment
+      - has_gift_card_payment
+      - customer_status
 ```
+
+
 
 ## Resources:
 - [What are dbt Metrics?](https://docs.getdbt.com/docs/building-a-dbt-project/metrics#about-metrics)
