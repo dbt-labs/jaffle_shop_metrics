@@ -31,7 +31,7 @@ it in the context of payment methods AND customer status. So lets build that out
 with the dbt Metric functionality!
 
 ### Materializing 
-The CEO has requested this metric contain the ability to slice by customer status,
+The CEO has requested this metric be able to see average order value by customer status,
 which is a field that lives in the customers table. dbt does not currently support
 join logic which means that we need to create an intermediate model combining orders 
 and customers upon which we can build the metric. 
