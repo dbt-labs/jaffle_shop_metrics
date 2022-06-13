@@ -95,7 +95,14 @@ from {{ metrics.metric(
 ```
 
 This returns a dataset where each row is equal to the average order amount metric 
-for that particular week! 
+for that particular week! I would then point my BI tool of choice at the materialized database 
+object and visualize it for the CEO so his questions would be answered. 
+
+If he wanted to see it within a different tool, we don't need to worry about differing
+definitions across different methods of consumption - the definition is centralized
+and so consistency is ensured across the company.
+
+Lets go sell some Jaffles!
 
 ## Resources:
 - [What are dbt Metrics?](https://docs.getdbt.com/docs/building-a-dbt-project/metrics#about-metrics)
