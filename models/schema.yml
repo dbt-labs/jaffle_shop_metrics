@@ -26,8 +26,8 @@ models:
       - name: number_of_orders
         description: Count of the number of orders a customer has placed
 
-      - name: total_order_amount
-        description: Total value (AUD) of a customer's orders
+      - name: customer_status
+        description: The status of the customer and whether they are churned, at risk of churn, or healthy
 
   - name: orders
     description: This table has basic information about orders, as well as some derived facts based on payments
@@ -78,5 +78,25 @@ models:
 
       - name: gift_card_amount
         description: Amount of the order (AUD) paid for by gift card
+        tests:
+          - not_null
+
+      - name: has_credit_card_payment
+        description: Whether the order had payment for by credit card
+        tests:
+          - not_null
+
+      - name: has_coupon_payment
+        description: Whether the order had payment by coupon
+        tests:
+          - not_null
+
+      - name: has_bank_transfer_payment
+        description: Whether the order had payment by bank transfer
+        tests:
+          - not_null
+
+      - name: has_gift_card_payment
+        description: Whether the order had payment by gift card
         tests:
           - not_null

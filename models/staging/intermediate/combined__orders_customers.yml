@@ -1,0 +1,34 @@
+version: 2
+
+models:
+  - name: combined__orders_customers
+    description: |
+      The combined model upon which we shall build our metrics. We include the 
+      order_id field & test to ensure the grain of the table remains the same
+    columns:
+      - name: order_id
+        description: This is a unique identifier for an order
+        tests:
+          - unique
+          - not_null
+
+
+metrics:
+  - name: average_order_amount
+    label: Average Order Amount
+    model: ref('combined__orders_customers')
+    description: "The average size of a jaffle order"
+
+    type: avg
+    sql: amount
+
+    timestamp: order_date
+    time_grains: [day, week, month]
+
+    dimensions:
+      - has_credit_card_payment
+      - has_coupon_payment
+      - has_bank_transfer_payment
+      - has_gift_card_payment
+      - customer_status
+    

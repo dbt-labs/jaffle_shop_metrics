@@ -1,0 +1,28 @@
+Table orders {
+  order_id int PK
+  credit_card_amount float
+  coupon_amount float
+  bank_transfer_amount float
+  gift_card_amount float
+  has_credit_card_payment boolean 
+  has_coupon_payment boolean 
+  has_bank_transfer_payment boolean
+  has_gift_card_payment boolean
+  amount float
+  order_date date
+  status int
+  customer_id int
+}
+
+Table customers {
+  customer_id int PK
+  first_name varchar
+  last_name varchar
+  first_order date
+  most_recent_order date
+  customer_status varchar
+  number_of_orders int
+}
+
+Ref: orders.customer_id > customers.customer_id
+
