@@ -104,6 +104,14 @@ and so consistency is ensured across the company.
 
 Lets go sell some Jaffles!
 
+## Use Case At Scale
+Jaffle shop aside, lets talk about what implementing metrics at scale would look like. The current implementation of dbt Metrics is largely inflexible from a consumers viewpoint - all the flexibility lives within the macro call and those who are unfamiliar/uncomfortable with dbt won't want to change the model. 
+
+This doesn't mean that it isn't useful however. The sheer act of defining and then materializing metric values within a single table, sans dimensions, can be incredibly powerful. 
+
+For example, you could create a `metrics` folder/schema that only contains individual metric tables for reference by the entire company. This could be extremely helpful for high-level reporting across the business and allow consumers to interact in their tool of choice while the data remains consistent. As long as the model names where the metric macro is being called match the metric itself, there is reduced chance of consumer confusion. 
+
+
 ## Resources:
 - [What are dbt Metrics?](https://docs.getdbt.com/docs/building-a-dbt-project/metrics#about-metrics)
 - [How do I create dbt Metrics?](https://docs.getdbt.com/docs/building-a-dbt-project/metrics#declaring-a-metric)
