@@ -81,22 +81,22 @@ models:
         tests:
           - not_null
 
-      - name: has_credit_card_payment
+      - name: had_credit_card_payment
         description: Whether the order had payment for by credit card
         tests:
           - not_null
 
-      - name: has_coupon_payment
+      - name: had_coupon_payment
         description: Whether the order had payment by coupon
         tests:
           - not_null
 
-      - name: has_bank_transfer_payment
+      - name: had_bank_transfer_payment
         description: Whether the order had payment by bank transfer
         tests:
           - not_null
 
-      - name: has_gift_card_payment
+      - name: had_gift_card_payment
         description: Whether the order had payment by gift card
         tests:
           - not_null
