@@ -2,7 +2,7 @@ version: 2
 metrics:
   - name: average_order_amount
     label: Average Order Amount
-    model: ref('combined__orders_customers')
+    model: ref('orders')
     description: "The average size of a jaffle order"
 
     type: average

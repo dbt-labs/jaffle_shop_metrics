@@ -1,34 +1,6 @@
 version: 2
 
 models:
-  - name: customers
-    description: This table has basic information about a customer, as well as some derived facts based on a customer's orders
-
-    columns:
-      - name: customer_id
-        description: This is a unique identifier for a customer
-        tests:
-          - unique
-          - not_null
-
-      - name: first_name
-        description: Customer's first name. PII.
-
-      - name: last_name
-        description: Customer's last name. PII.
-
-      - name: first_order
-        description: Date (UTC) of a customer's first order
-
-      - name: most_recent_order
-        description: Date (UTC) of a customer's most recent order
-
-      - name: number_of_orders
-        description: Count of the number of orders a customer has placed
-
-      - name: customer_status
-        description: The status of the customer and whether they are churned, at risk of churn, or healthy
-
   - name: orders
     description: This table has basic information about orders, as well as some derived facts based on payments
 
@@ -100,3 +72,24 @@ models:
         description: Whether the order had payment by gift card
         tests:
           - not_null
+
+      - name: customer_id
+        description: This is a unique identifier for a customer
+
+      - name: first_name
+        description: Customer's first name. PII.
+
+      - name: last_name
+        description: Customer's last name. PII.
+
+      - name: first_order
+        description: Date (UTC) of a customer's first order
+
+      - name: most_recent_order
+        description: Date (UTC) of a customer's most recent order
+
+      - name: number_of_orders
+        description: Count of the number of orders a customer has placed
+
+      - name: customer_status
+        description: The status of the customer and whether they are churned, at risk of churn, or healthy

@@ -1,4 +1,4 @@
- -- depends_on: {{ ref('combined__orders_customers') }}
+ -- depends_on: {{ ref('orders') }}
 
 select * 
 from {{ metrics.metric(

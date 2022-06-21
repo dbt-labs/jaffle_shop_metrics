@@ -1,12 +1,12 @@
 with orders as (
 
-    select * from {{ ref('orders') }}
+    select * from {{ ref('int_order_payments_pivoted') }}
 
 )
 ,
 customers as (
 
-    select * from {{ ref('customers') }}
+    select * from {{ ref('int_customer_order_history_joined') }}
 
 )
 ,
