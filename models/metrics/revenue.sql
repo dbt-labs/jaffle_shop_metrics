@@ -1,8 +1,6 @@
- -- depends_on: {{ ref('orders') }}
-
 select * 
-from {{ metrics.metric(
-    metric_name='revenue',
+from {{ metrics.calculate(
+    metric('revenue'),
     grain='week',
     dimensions=['customer_status']
 ) }}

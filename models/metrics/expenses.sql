@@ -1,6 +1,6 @@
 select * 
 from {{ metrics.calculate(
-    metric('average_order_amount'),
+    metric('expenses'),
     grain='week',
     dimensions=[],
 ) }}
