@@ -8,7 +8,7 @@ with source as (
 
 ),
 
-renamed as (
+renamed test
 
     select
         id as customer_id,
