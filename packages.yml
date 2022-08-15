@@ -1,4 +1,8 @@
 
 packages:
   - package: dbt-labs/metrics
+<<<<<<< HEAD
     version: 0.3.0
+=======
+    version: 0.3.1
+>>>>>>> a83e107e89ebf7a8a2dd8d04f86604fae3a47e35
