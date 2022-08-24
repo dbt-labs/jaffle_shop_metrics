@@ -86,8 +86,8 @@ In the meantime, lets also begin to answer our CEO's question. If he were first 
 
 ```sql
 select * 
-from {{ metrics.metric(
-    metric_name='average_order_amount',
+from {{ metrics.calculate(
+    metric('average_order_amount'),
     grain='week',
     dimensions=[],
 ) }}
