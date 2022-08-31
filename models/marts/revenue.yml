@@ -23,3 +23,28 @@ metrics:
       - field: status
         operator: '='
         value: "'completed'"
+
+  - name: revenue_window
+    label: Revenue
+    model: ref('orders')
+    description: "The total revenue of our jaffle business"
+
+    type: sum
+    sql: amount 
+
+    timestamp: order_date
+    time_grains: [day, week, month, year]
+
+    window: 14 days
+
+    dimensions:
+      - customer_status
+      - had_credit_card_payment
+      - had_coupon_payment
+      - had_bank_transfer_payment
+      - had_gift_card_payment
+
+    filters:
+      - field: status
+        operator: '='
+        value: "'completed'"
