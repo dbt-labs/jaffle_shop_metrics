@@ -72,10 +72,10 @@ Now it's time to use metrics!
 
 ### Caveat Pre dbt-Server
 Metrics are dynamic by nature and the ability to quickly iterate and
-consume them is very important. dbt's current paradigm of materializing tables means
-that consuming metrics must be pre-defined and pre-materialzied in order for the table 
-to be represented in the BI tool. This will change, however, with the release of 
-dbt Server in late 2022. This will allow the user/consumer/BI tool to provide the 
+consume them is very important. The practice of materializing metric datasets
+with pre-configured dimensions & time grains is considered an anti-pattern workaround to 
+test & tire kick the functionality in mid 2022. This will change, however, with the release of 
+dbt Server in late 2022. It will allow the user/consumer/BI tool to provide the 
 parameters of the BI query and get returned the exact answer they are looking for,
 as opposed to materializing each potential combination in tables.
 
