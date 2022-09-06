@@ -2,4 +2,11 @@
 
 packages:
   - package: dbt-labs/metrics
+<<<<<<< HEAD
     version: 0.3.2
+=======
+    version: [">=0.3.0", "<0.4.0"]
+
+  - package: dbt-labs/audit_helper
+    version: 0.5.0
+>>>>>>> 3ddad1755ff49e8b5f0a15d9d17afd7c723c8257

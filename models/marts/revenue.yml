@@ -14,10 +14,10 @@ metrics:
 
     dimensions:
       - customer_status
-      - has_coupon_payment
-      - has_bank_transfer_payment
-      - has_credit_card_payment
-      - has_gift_card_payment
+      - had_credit_card_payment
+      - had_coupon_payment
+      - had_bank_transfer_payment
+      - had_gift_card_payment
 
     filters:
       - field: status
