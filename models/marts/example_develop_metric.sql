@@ -6,8 +6,8 @@ metrics:
     label: Total Discount ($)
     timestamp: order_date
     time_grains: [day, week, month]
-    type: average
-    sql: amount
+    calculation_method: average
+    expression: amount
     dimensions:
       - had_discount
       - order_country
@@ -17,6 +17,7 @@ metrics:
 select * 
 from {{ metrics.develop(
         develop_yml=my_metric_yml,
-        grain='month'
+        grain='month',
+        metric_list=['develop_metric']
         )
     }}
