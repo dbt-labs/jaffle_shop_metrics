@@ -6,8 +6,8 @@ metrics:
     model: ref('orders')
     description: "The total revenue of our jaffle business"
 
-    type: sum
-    sql: amount 
+    calculation_method: sum
+    expression: amount 
 
     timestamp: order_date
     time_grains: [day, week, month, year]

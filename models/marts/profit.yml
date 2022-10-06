@@ -5,8 +5,8 @@ metrics:
     label: Profit
     description: "The total money we get to take home from our jaffle business"
 
-    type: expression
-    sql: "{{metric('revenue')}} - {{metric('expenses')}}" 
+    calculation_method: derived
+    expression: "{{metric('revenue')}} - {{metric('expenses')}}" 
 
     timestamp: order_date
     time_grains: [hour, day, week, month, year]
