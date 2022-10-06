@@ -5,8 +5,8 @@ metrics:
     model: ref('orders')
     description: "The average size of a jaffle order"
 
-    type: average
-    sql: amount
+    calculation_method: average
+    expression: amount
 
     timestamp: order_date
     time_grains: [day, week, month]
