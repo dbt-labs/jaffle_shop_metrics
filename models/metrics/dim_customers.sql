@@ -7,7 +7,7 @@ metrics:
     description: "The total revenue of our jaffle business"
 
     type: sum
-    sql: amount 
+    sql: amount
 
     timestamp: order_date
     time_grains: [day, week, month, year]
