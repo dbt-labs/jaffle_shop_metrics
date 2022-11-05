@@ -41,7 +41,7 @@ final as (
 
         order_payments.{{ payment_method }}_amount,
         case 
-            when {{ payment_method }}_amount is not null then true
+            when {{ payment_method }}_amount > 0 then true
             else false 
         end as had_{{payment_method}}_payment,
 
