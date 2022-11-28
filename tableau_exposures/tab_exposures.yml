@@ -1,0 +1,17 @@
+version: 2
+
+exposures:
+  
+  - name: football_transfers_datasource
+    type: dashboard
+    maturity: high
+    url: https://dub01.online.tableau.com/#/site/taco/explore/datasource/11419175
+    description: >
+      Great datasource for demos. Showing football club and transfer infos.
+    
+    depends_on:
+      - ref('orders')
+      
+    owner:
+      name: Andreas Terörde from Tableau
+      email: ateroerde@salesforce.com
