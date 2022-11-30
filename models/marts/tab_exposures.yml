@@ -2,7 +2,7 @@ exposures:
 - depends_on:
   - ref('int_customer_order_history_joined')
   - ref('orders')
-  description: ''
+  description: this is my workbook description
   maturity: high
   name: workbook with a join
   owner:
@@ -12,7 +12,7 @@ exposures:
   url: https://prod-uk-a.online.tableau.com/#/site/tableaujunkietest/workbooks/249187
 - depends_on:
   - ref('int_customer_order_history_joined')
-  description: ''
+  description: tableau workbook with analysis of customer orders
   maturity: high
   name: customer orders
   owner:
