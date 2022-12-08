@@ -4,10 +4,10 @@ Table int_order_payments_pivoted {
   coupon_amount float
   bank_transfer_amount float
   gift_card_amount float
-  has_credit_card_payment boolean 
-  has_coupon_payment boolean 
-  has_bank_transfer_payment boolean
-  has_gift_card_payment boolean
+  had_credit_card_payment boolean
+  had_coupon_payment boolean
+  had_bank_transfer_payment boolean
+  had_gift_card_payment boolean
   amount float
   order_date date
   status int
