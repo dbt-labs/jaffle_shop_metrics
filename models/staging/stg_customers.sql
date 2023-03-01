@@ -1,22 +1,25 @@
-with source as (
+{% set my_metric_yml -%}
+{% raw %}
 
-    {#-
-    Normally we would select from the table here, but we are using seeds to load
-    our data in this project
-    #}
-    select * from {{ ref('raw_customers') }}
+metrics:
+  - name: develop_metric
+    model: ref('fact_orders')
+    label: Total Discount ($)
+    timestamp: order_date
+    time_grains: [day, week, month]
+    calculation_method: average
+    expression: discount_total
+    dimensions:
+      - had_discount
+      - order_country
 
-),
+{% endraw %}
+{%- endset %}
 
-renamed as (
-
-    select
-        id as customer_id,
-        first_name,
-        last_name
-
-    from source
-
-)
-
-select * from renamed
+select * 
+from {{ metrics.develop(
+        develop_yml=my_metric_yml,
+        metric_list=['develop_metric'],
+        grain='month'
+        )
+    }}
