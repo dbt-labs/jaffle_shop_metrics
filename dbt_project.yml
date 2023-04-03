@@ -1,9 +1,9 @@
-name: 'jaffle_shop_metrics'
+name: 'semantic_layer'
 
 config-version: 2
 version: '0.1'
 
-profile: 'jaffle_shop_metrics'
+profile: 'semantic_layer'
 
 model-paths: ["models"]
 seed-paths: ["seeds"]
