@@ -16,3 +16,19 @@ metrics:
       - had_coupon_payment
       - had_bank_transfer_payment
       - had_gift_card_payment
+
+  - name: total_expenses
+    label: Total Expenses
+    description: "The total money we get to take home from our jaffle business"
+
+    calculation_method: sum
+    expression: "{{metric('expenses')}}" 
+
+    timestamp: order_date
+    time_grains: [hour, day, week, month, year]
+
+    dimensions:
+      - customer_status
+      - had_coupon_payment
+      - had_bank_transfer_payment
+      - had_gift_card_payment
