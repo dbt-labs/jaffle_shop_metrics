@@ -1,7 +1,7 @@
 version: 2
 
 models:
-  - name: int_customer_order_history_joined
+  - name: customer_orders_fact
     description: This table has basic information about a customer, as well as some derived facts based on a customer's orders
 
     columns:
