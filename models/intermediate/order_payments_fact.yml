@@ -1,7 +1,7 @@
 version: 2
 
 models:
-  - name: int_order_payments_pivoted
+  - name: order_payments_fact
     description: This table has basic information about orders, as well as some derived facts based on payments
 
     columns:
