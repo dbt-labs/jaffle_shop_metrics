@@ -15,7 +15,3 @@ metrics:
     dimensions:
       - customer_status
     
-    filters:
-      - field: status
-        operator: '='
-        value: "'completed'"
