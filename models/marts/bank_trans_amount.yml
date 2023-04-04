@@ -1,7 +1,7 @@
 version: 2
 
 metrics:
-  - name: bank_transfer_amt
+  - name:  bank_transfer_amount
     label: Bank Transfer Amount
     model: ref('orders')
     description: "The total bank transf amount"
