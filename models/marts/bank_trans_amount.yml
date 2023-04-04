@@ -1,13 +1,13 @@
 version: 2
 
 metrics:
-  - name:  bank_transfer_amount
+  - name:  bank_trans_amount
     label: Bank Transfer Amount
     model: ref('orders')
     description: "The total bank transf amount"
 
     calculation_method: sum
-    expression: bank_transfer_amt 
+    expression: bank_transfer_amount 
 
     timestamp: order_date
     time_grains: [day, week, month, year]
