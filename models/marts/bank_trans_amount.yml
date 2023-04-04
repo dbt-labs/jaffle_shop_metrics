@@ -1,0 +1,21 @@
+version: 2
+
+metrics:
+  - name: bank_transfer_amt
+    label: Bank Transfer Amount
+    model: ref('orders')
+    description: "The total bank transf amount"
+
+    calculation_method: sum
+    expression: bank_transfer_amt 
+
+    timestamp: order_date
+    time_grains: [day, week, month, year]
+
+    dimensions:
+      - customer_status
+    
+    filters:
+      - field: status
+        operator: '='
+        value: "'completed'"
