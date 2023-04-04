@@ -1,7 +1,7 @@
 version: 2
 
 models:
-  - name: order_payments_fact
+  - name: order_payments_ods
     description: This table has basic information about orders, as well as some derived facts based on payments
 
     columns:
