@@ -5,15 +5,14 @@ metrics:
     label: Profit
     description: "The total money we get to take home from our jaffle business"
 
-    type: expression
-    sql: "{{metric('revenue')}} - {{metric('expenses')}}" 
+    calculation_method: derived
+    expression: "{{metric('revenue')}} - {{metric('expenses')}}" 
 
     timestamp: order_date
-    time_grains: [day, week, month, year]
+    time_grains: [hour, day, week, month, year]
 
     dimensions:
       - customer_status
-      - has_coupon_payment
-      - has_bank_transfer_payment
-      - has_credit_card_payment
-      - has_gift_card_payment
+      - had_coupon_payment
+      - had_bank_transfer_payment
+      - had_gift_card_payment

@@ -1,8 +1,7 @@
 ## Jaffle Shop Metrics 
-In case you are unfamiliar with the jaffle_shop dataset and dbt example project, 
-I highly recommend you first review this [repository](https://github.com/dbt-labs/jaffle_shop) to familiarize yourself with it. This project builds on top of it
-to demonstrate a simple example of a metrics implementation with dbt Metrics 
-functionality. 
+In case you are unfamiliar with the jaffle_shop dataset and dbt example project, I highly recommend you first review this [repository](https://github.com/dbt-labs/jaffle_shop) to familiarize yourself with it. This project builds on top of it to demonstrate a simple example of a metrics implementation with dbt Metrics functionality.
+
+#### **This repo has been updated to work with dbt v1.3**
 
 ### Differences From Jaffle Shop
 There are a few differences in this example project when compared directly to 
@@ -54,8 +53,8 @@ metrics:
     model: ref('orders')
     description: "The average size of a jaffle order"
 
-    type: average
-    sql: amount
+    calculation_method: average
+    expression: amount
 
     timestamp: order_date
     time_grains: [day, week, month]
@@ -89,8 +88,8 @@ In the meantime, lets also begin to answer our CEO's question. If he were first 
 
 ```sql
 select * 
-from {{ metrics.metric(
-    metric_name='average_order_amount',
+from {{ metrics.calculate(
+    metric('average_order_amount'),
     grain='week',
     dimensions=[],
 ) }}

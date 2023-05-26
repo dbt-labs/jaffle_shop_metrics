@@ -5,15 +5,15 @@ metrics:
     model: ref('orders')
     description: "The average size of a jaffle order"
 
-    type: average
-    sql: amount
+    calculation_method: average
+    expression: amount
 
     timestamp: order_date
     time_grains: [day, week, month]
 
     dimensions:
-      - has_credit_card_payment
-      - has_coupon_payment
-      - has_bank_transfer_payment
-      - has_gift_card_payment
+      - had_credit_card_payment
+      - had_coupon_payment
+      - had_bank_transfer_payment
+      - had_gift_card_payment
       - customer_status
