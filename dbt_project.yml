@@ -1,9 +1,9 @@
-name: 'jaffle_shop_metrics'
+name: 'semantic_layer'
 
 config-version: 2
 version: '0.1'
 
-profile: 'jaffle_shop_metrics'
+profile: 'semantic_layer'
 
 model-paths: ["models"]
 seed-paths: ["seeds"]
@@ -20,7 +20,7 @@ clean-targets:
 require-dbt-version: [">=1.2.0-rc1", "<2.0.0"]
 
 models:
-  jaffle_shop_metrics:
+  semantic_layer:
       materialized: table
       staging:
         materialized: view

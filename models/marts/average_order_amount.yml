@@ -3,7 +3,7 @@ metrics:
   - name: average_order_amount
     label: Average Order Amount
     model: ref('orders')
-    description: "The average size of a jaffle order"
+    description: "The average size of an order"
 
     calculation_method: average
     expression: amount

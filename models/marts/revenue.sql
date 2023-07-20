@@ -1,3 +1,9 @@
+{{
+    config(
+        materialized = 'view',
+        tags=['revenue']
+    )
+}}
 select *
 from {{ 
     metrics.calculate(
