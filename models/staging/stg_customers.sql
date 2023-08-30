@@ -9,6 +9,4 @@ renamed as (
         last_name
 
     from source
-)
-
-select * from renamed
+    ) select * from renamed
