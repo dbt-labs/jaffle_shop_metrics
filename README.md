@@ -1,3 +1,15 @@
+# ***Archival Notice***
+This repository has been archived.
+
+As a result all of its historical issues and PRs have been closed.
+
+Please *do not clone* this repo without understanding the risk in doing so:
+- It may have unaddressed security vulnerabilities
+- It may have unaddressed bugs
+
+<details>
+   <summary>Click for historical readme</summary>
+
 ## Jaffle Shop Metrics 
 In case you are unfamiliar with the jaffle_shop dataset and dbt example project, I highly recommend you first review this [repository](https://github.com/dbt-labs/jaffle_shop) to familiarize yourself with it. This project builds on top of it to demonstrate a simple example of a metrics implementation with dbt Metrics functionality.
 
@@ -51,7 +63,7 @@ metrics:
   - name: average_order_amount
     label: Average Order Amount
     model: ref('orders')
-    description: "The average size of a jaffle order"
+    description: &quot;The average size of a jaffle order&quot;
 
     calculation_method: average
     expression: amount
@@ -72,8 +84,8 @@ Now it's time to use metrics!
 ### Caveat Pre dbt-Server
 Metrics are dynamic by nature and the ability to quickly iterate and
 consume them is very important. The practice of materializing metric datasets
-with pre-configured dimensions & time grains is considered an anti-pattern workaround to 
-test & tire kick the functionality in mid 2022. This will change, however, with the release of 
+with pre-configured dimensions &amp; time grains is considered an anti-pattern workaround to 
+test &amp; tire kick the functionality in mid 2022. This will change, however, with the release of 
 dbt Server in late 2022. It will allow the user/consumer/BI tool to provide the 
 parameters of the BI query and get returned the exact answer they are looking for,
 as opposed to materializing each potential combination in tables.
@@ -117,3 +129,4 @@ For example, you could create a `metrics` folder/schema that only contains indiv
 - [What are dbt Metrics?](https://docs.getdbt.com/docs/building-a-dbt-project/metrics#about-metrics)
 - [How do I create dbt Metrics?](https://docs.getdbt.com/docs/building-a-dbt-project/metrics#declaring-a-metric)
 - [Ongoing Discussions around dbt Metrics](https://docs.getdbt.com/docs/building-a-dbt-project/metrics#ongoing-discussions)
+
